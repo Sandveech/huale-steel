@@ -4,47 +4,61 @@ body {
 }
 
 /*HEADER BOX*/
-.header-box {
-    height : 150px;
-    top : 0px;
+.top-header {
+    height : 5rem;
     background-color : white;
-    position : relative;
+    position : sticky;
+    top : 0;
+    z-index: 100; 
+}
+#home-header {
+    position : absolute;
+    height : 6rem;
+    width : 80%;
+    left : 50%;
+    transform : translateX(-50%);
 }
 .logo-small {
     position : absolute;
-    transform : scale(0.5, 0.5);
-    top : -4px;
-    left : 10%
+    transform : scale(0.4, 0.4);
+    bottom : -25%;
+    left : -2.5%;
 }
 .page-menu {
     display : flex;
     flex-wrap : wrap;
     justify-content : flex-end;
-    width : 52%;
-    gap : 6.25rem;
-    padding : 4.375rem 0;
-    margin-left : 38%;
+    width : 60%;
+    height : 6rem;
+    gap : 6rem;
+    height : 3.5rem;
+    padding-top : 2rem;
+    margin-left : 40%;
+    position : absolute;
 }
 .page-menu a {
     position : relative;
     display : inline-block;
     text-decoration : none;
-    font-family : "Montserrat Medium", sans-serif;
-    font-size : 1.125rem;
+    font-family : "Montserrat SemiBold", sans-serif;
+    font-size : 1rem;
     color : black;
-    text-underline-offset: 0.5rem;
-    padding-bottom : 4px;
+    opacity : 0.5;
+    transition : opacity 0.3s ease;
 }
 .page-menu a::after {
     content : "";
     position : absolute;
-    bottom : 0;
     left : 50%;
     transform : translateX(-50%);
-    height : 0.125rem;
+    height : 0.2rem;
     width : 0;
+    color : black;
     background-color : black;
-    transition : width 0.35s ease;
+    transition : width 0.3s ease;
+}
+.page-menu a:hover {
+    opacity : 1;
 }
 .page-menu a:hover::after {
     width : 100%;
@@ -55,10 +69,18 @@ body {
     height : 200px;
     background-color : red;
     position : relative;
+    margin : 0;
 }
 #hero-banner-img {
     position : absolute;
     height : 200px;
+}
+
+/*HOME CONTENT*/
+#home-content {
+    height : 1000px;
+    background-color : white;
+    position : relative;
 }
 
 /*FOOTER BOX*/
@@ -66,6 +88,14 @@ body {
     height : 400px;
     background-color : blue;
     position : relative;
+}
+#copyright {
+    font-family: "Montserrat Medium", sans-serif;
+    color : white;
+    position : absolute;
+    top : 80%;
+    left : 50%;
+    transform : translateX(-50%);
 }
 
 /*ANIMATIONS*/
