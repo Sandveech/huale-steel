@@ -29,10 +29,10 @@ body {
     display : flex;
     flex-wrap : wrap;
     justify-content : flex-end;
-    width : 60%;
+    width : 61%;
     height : 6rem;
     gap : 6rem;
-    height : 3.5rem;
+    height : 3rem;
     padding-top : 2rem;
     margin-left : 40%;
     position : absolute;
@@ -41,7 +41,8 @@ body {
     position : relative;
     display : inline-block;
     text-decoration : none;
-    font-family : "Montserrat SemiBold", sans-serif;
+    font-family : "Roboto", sans-serif;
+    font-weight : 600;
     font-size : 1rem;
     color : black;
     opacity : 0.5;
@@ -68,19 +69,68 @@ body {
 
 /*HERO BANNER*/
 .hero-banner {
-    height : 200px;
-    background-color : red;
+    height : 500px;
     position : relative;
     margin : 0;
+    background-image : url("../images/steel-background-placeholder.jpg");
+    background-size : cover;
+    background-position : center;
 }
-#hero-banner-img {
+.hero-banner::before {
+    content  : "";
     position : absolute;
-    height : 200px;
+    inset : 0;
+    background : linear-gradient(60deg, rgba(2, 30, 135, 0.7) 30%, rgba(2, 30, 135, 0.1) 50%, transparent 60%);
+    z-index : 1;
+}
+#tagline {
+    position : absolute;
+    font-family : "Roboto", sans-serif;
+    font-weight : 900;
+    color : white;
+    font-size : clamp(2rem, 5vw, 3.5rem);
+    left : 10%;
+    top : 10%;
+    z-index : 2;
+}
+#cta-button {
+    position : absolute;
+    font-family : "Roboto", sans-serif;
+    font-weight : 800;
+    font-size : clamp(1rem, 2.5vw, 1.25rem);
+    color : white;
+    width : 375px;
+    height : 60px;
+    left : 10%;
+    top : 65%;
+    transform : translateY(-50%);
+    background-color : #e00225;
+    border : none;
+    cursor : pointer;
+    border-radius : 32px;
+    z-index : 2;
+    transition : 
+        background-color 0.4s ease,
+        color 0.4s ease;
+}
+#cta-button:hover {
+    background-color : white;
+    color : #e00225;
+}
+.fi-sr-box-open {
+    position : absolute;
 }
 
-/*HOME CONTENT*/
-#home-content {
-    height : 1000px;
+/*ABOUT US SUMMARY*/
+.about-us-summary {
+    height : 500px;
+    background-color : white;
+    position : relative;
+}
+
+/*QUICK STATS BAR*/
+.quick-stats-bar {
+    height : 500px;
     background-color : white;
     position : relative;
 }
@@ -91,47 +141,66 @@ body {
     background-color : #021e87;
     position : relative;
 }
-#quick-links {
+#quick-links-menu {
     position : absolute;
     padding-top : 60px;
-    left : 50%;
-    transform : translateX(-50%);
+    left : 35%;
     width : 300px;
     height : 325px;
     margin-top : 32px;
     padding-top : 0;
     padding-left : 40px;
 }
-#quick-links h3 {
-    font-family : "Montserrat SemiBold";
+#contact-us-menu {
+    position : absolute;
+    padding-top : 60px;
+    left : 55%;
+    width : 300px;
+    height : 325px;
+    margin-top : 32px;
+    padding-top : 0;
+    padding-left : 40px;
+}
+.footer-header {
+    font-family : "Roboto";
+    font-weight : 600;
     color : white;
     position : absolute;
+    z-index : 2;
 }
-.quick-links-menu {
+.footer-menu {
     display : flex;
     flex-direction : column;
     gap : 15px;
-    width : 450px;
-    height : 200px;
-    padding-top : 3.5rem;
+    padding-top : 5rem;
     margin-bottom : 50px;
     position : absolute;
 }
-#quick-links a {
-    font-family: "Montserrat Medium", sans-serif;
+.footer-menu p {
+    font-family: "Roboto", sans-serif;
+    font-weight : 500;
     color : white;
     text-decoration : none;
-    opacity : 0.6;
-    transition : opacity 0.3s ease;
     position : relative;
     left : 50%;
     transform : translateX(-50%);
 }
-#quick-links a:hover {
-    opacity : 1;
+.footer-menu a {
+    font-family: "Roboto", sans-serif;
+    font-weight : 500;
+    color : white;
+    text-decoration : none;
+    position : relative;
+    left : 50%;
+    transform : translateX(-50%);
+    transition : color 0.2s ease;
+}
+.footer-menu a:hover {
+    color : #e00225;
 }
 #copyright {
-    font-family: "Montserrat Medium", sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-weight : 500;
     color : white;
     position : absolute;
     top : 85%;
@@ -140,11 +209,3 @@ body {
 }
 
 /*ANIMATIONS*/
-@keyframes bar-expand-center {
-    0% {
-
-    }
-    100% {
-
-    }
-}
