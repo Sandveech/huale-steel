@@ -9,21 +9,28 @@ document.querySelectorAll("a, button").forEach(el => {
     el.addEventListener("click", e => {
     const overlay = document.getElementById("transition-overlay");
 
-        // Handle <a> links
         if (el.tagName.toLowerCase() === "a") {
-        const href = el.getAttribute("href");
-        if (href && !href.startsWith("#") && !href.startsWith("javascript:")) {
-            e.preventDefault();
-            overlay.classList.add("show");
-            setTimeout(() => window.location.href = href, 500);
-        }
-
-        // Handle <button data-href="...">
+            const href = el.getAttribute("href");
+            if (href && !href.startsWith("#") && !href.startsWith("javascript:")) {
+                e.preventDefault();
+                overlay.classList.add("show");
+                setTimeout(() => window.location.href = href, 500);
+            }
         }
         else if (el.tagName.toLowerCase() === "button" && el.dataset.href) {
             e.preventDefault();
             overlay.classList.add("show");
             setTimeout(() => window.location.href = el.dataset.href, 500);
+        }
+    });
+});
+
+// Link Highlights
+document.addEventListener("DOMContentLoaded", () => {
+    const currentPage = window.location.pathname.split("/").pop();
+    document.querySelectorAll("a.pages").forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
         }
     });
 });
@@ -36,13 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const dropdownOptions = document.querySelectorAll('.dropdown-options div');
     const overlay = document.getElementById('transition-overlay');
 
-    // Start with white overlay visible
     overlay.classList.add("show");
 
-    // fter short delay, remove overlay (fade in)
     setTimeout(() => { overlay.classList.remove("show"); }, 500);
     
-    // Set dropdown language and swap values visually
     dropdownOptions.forEach(option => {
         if (option.dataset.lang === savedLang) {
             const prev_lang = selected.textContent;
@@ -55,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Apply translations
     document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
         el.innerHTML = translations[savedLang][key];
@@ -77,7 +80,6 @@ document.querySelectorAll('.dropdown-options div').forEach(option => {
 
         setTimeout(() => { overlay.classList.remove("show");
 
-            // Swap visual text
             selected.textContent = option.textContent;
             option.textContent = prev_lang;
 
@@ -86,10 +88,8 @@ document.querySelectorAll('.dropdown-options div').forEach(option => {
             selected.setAttribute("data-lang", option.getAttribute("data-lang"));
             option.setAttribute("data-lang", data_prev_lang);
 
-            // Save selected language
             localStorage.setItem("lang", lang);
 
-            // Apply translations
             document.querySelectorAll("[data-i18n]").forEach(el => {
                 const key = el.getAttribute("data-i18n");
                 el.innerHTML = translations[lang][key];
