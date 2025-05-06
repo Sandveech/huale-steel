@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/huale-steel-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>document.documentElement.classList.add("lang-loading")</script>
 </head>
 <body>
     <!--HEADER-->
@@ -22,9 +24,10 @@
                 <a href="about_us.html" data-i18n="about_us_header" class="pages" id="about-us">ABOUT US</a>
                 <a href="products_and_services.html" data-i18n="products_and_services_header" class="pages" id="products-and-services">PRODUCTS & SERVICES</a>
                 <a href="subsidiaries_and_partners.html" data-i18n="subsidiaries_and_partners_header" class="pages" id="subsidiaries-and-partners">SUBSIDIARIES & PARTNERS</a>
-                <a href="contact_us.html" data-i18n="contact_us" class="pages" id="contact-us">CONTACT US</a>
+                <a href="contact_us.html" data-i18n="contact_us_header" class="pages" id="contact-us">CONTACT US</a>
             </nav>
             <div class="dropdown">
+                <i id="globe-icon" class="fa-solid fa-globe"></i>
                 <div class="selected" data-lang="en">EN</div>
                 <p class="dropdown-arrow">▼</p>
                     <div class="dropdown-options">
@@ -36,19 +39,43 @@
     </div>
 
     <!--HERO-BANNER-->
-    <div class="hero-banner">
+    <div id="hero-banner">
         <h1 data-i18n="tagline" id="tagline">Together We Develop,<br>Together We Prosper</h1>
         <button id="cta-button" data-i18n="explore_products" onclick="location.href='products_and_services.html'">Explore Our Products</button>
     </div>
 
     <!--ABOUT US SUMMARY-->
-    <div class="about-us-summary">
-        <p>About us summary</p>
+    <div id="about-us-summary">
+        <i id="flag" class="fa-solid fa-flag"></i>
+        <p id="summary">
+            Built on a foundation of international steel trade strengthened by strong Cambodia–China relations,<br>
+            HUALE STEEL was established to harness Cambodia’s strategic economic position.<br>
+            <a href="about_us.html" id="read-more">
+                Read more&nbsp;
+                <i class="fa-solid fa-chevron-right" style="transform : scale(0.8); margin-top : 32px"></i>
+            </a>
+        </p>
     </div>
 
     <!--QUICK STATS BAR-->
-    <div class="quick-stats-bar">
-        <p>Quick stats bar</p>
+    <div id="quick-stats-bar">
+        <div id="quick-stats">
+            <div id="established" class="quick-stats-box">
+                <i class="fa-solid fa-calendar" style="color : #e00225; transform : scale(2);"></i>
+                <h4>ESTABLISHED</h4>
+                <h2>2024</h2>
+            </div>
+            <div id="capacity" class="quick-stats-box">
+                <i class="fa-solid fa-weight-hanging" style="color : #e00225; transform : scale(2);"></i>
+                <h4>CAPACITY</h4>
+                <h2>600 tons/day</h2>
+            </div>
+            <div id="locations" class="quick-stats-box">
+                <i class="fa-solid fa-location-dot" style="color : #e00225; transform : scale(2);"></i>
+                <h4>LOCATIONS</h4>
+                <h2>Cambodia & China</h2>
+            </div>
+        </div>
     </div>
 
     <!--FOOTER-->
@@ -60,17 +87,20 @@
                 <a href="about_us.html" data-i18n="about_us_footer">About Us</a>
                 <a href="products_and_services.html" data-i18n="products_and_services_footer">Products & Services</a>
                 <a href="subsidiaries_and_partners.html" data-i18n="subsidiaries_and_partners_footer">Subsidiaries & Partners</a>
-                <a href="contact_us.html" data-i18n="contact_us">Contact Us</a>
+                <a href="contact_us.html" data-i18n="contact_us_footer">Contact Us</a>
             </nav>
         </div>
-        <div id="contact-us-menu">
-            <h3 class="footer-header" data-i18n="contacts">CONTACT US</h3>
+        <div id="social-media-menu">
+            <h3 class="footer-header" data-i18n="social_media">SOCIAL MEDIA</h3>
             <nav class="footer-menu">
-                <a href="tel:+85560801999" data-i18n="cambodia_tel">+855 60 801 999 (CAMBODIA)</a>
-                <a href="tel:+61432168168" data-i18n="australia_tel">+61 432 168 168 (AUSTRALIA)</a>
-                <a href="https://t.me/hualesteel">Huale Steel Telegram</a>
-                <a href="https://web.facebook.com/profile.php?id=61568759048866">Huale Steel Cambodia Facebook</a>
-                <a href="https://maps.app.goo.gl/rmtythswUZiMAFeH9">Special Economic Zone of Sihanoukville Autonomous Port, Sihanoukville Province, Cambodia</a>
+                <a href="https://t.me/hualesteel">
+                    <i class="fa-brands fa-telegram"></i>&nbsp;
+                    Huale Steel Telegram
+                </a>
+                <a href="https://web.facebook.com/profile.php?id=61568759048866">
+                    <i class="fa-brands fa-facebook"></i>&nbsp;
+                    Huale Steel Cambodia Facebook
+                </a>
             </nav>
         </div>
         <p id="copyright">© 2025 Huale Steel. All Rights Reserved</p>
