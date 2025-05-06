@@ -1,6 +1,6 @@
 // Transitions
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
     const overlay = document.getElementById("transition-overlay");
     overlay.classList.remove("show");
 });
@@ -34,11 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const savedLang = localStorage.getItem("lang") || "en";
     const selected = document.querySelector('.selected');
     const dropdownOptions = document.querySelectorAll('.dropdown-options div');
+    const overlay = document.getElementById('transition-overlay');
 
-    // Set dropdown text and data-lang
+    // Start with white overlay visible
+    overlay.classList.add("show");
+
+    // fter short delay, remove overlay (fade in)
+    setTimeout(() => { overlay.classList.remove("show"); }, 500);
+    
+    // Set dropdown language and swap values visually
     dropdownOptions.forEach(option => {
         if (option.dataset.lang === savedLang) {
-            // Swap values visually
             const prev_lang = selected.textContent;
             selected.textContent = option.textContent;
             option.textContent = prev_lang;
@@ -64,26 +70,33 @@ document.querySelectorAll('.dropdown-options div').forEach(option => {
         const lang = option.dataset.lang;
         const selected = document.querySelector('.selected');
         const prev_lang = selected.textContent;
+        const overlay = document.getElementById('transition-overlay');
 
-        // Swap visual text
-        selected.textContent = option.textContent;
-        option.textContent = prev_lang;
+        // Start with white overlay visible
+        overlay.classList.add("show");
 
-        // Swap data attributes
-        const data_prev_lang = selected.getAttribute("data-lang");
-        selected.setAttribute("data-lang", option.getAttribute("data-lang"));
-        option.setAttribute("data-lang", data_prev_lang);
+        setTimeout(() => { overlay.classList.remove("show");
 
-        // Save selected language
-        localStorage.setItem("lang", lang);
+            // Swap visual text
+            selected.textContent = option.textContent;
+            option.textContent = prev_lang;
 
-        // Apply translations
-        document.querySelectorAll("[data-i18n]").forEach(el => {
-            const key = el.getAttribute("data-i18n");
-            el.innerHTML = translations[lang][key];
-        });
+            // Swap data attributes
+            const data_prev_lang = selected.getAttribute("data-lang");
+            selected.setAttribute("data-lang", option.getAttribute("data-lang"));
+            option.setAttribute("data-lang", data_prev_lang);
 
-        document.documentElement.classList.remove("lang-loading");
+            // Save selected language
+            localStorage.setItem("lang", lang);
+
+            // Apply translations
+            document.querySelectorAll("[data-i18n]").forEach(el => {
+                const key = el.getAttribute("data-i18n");
+                el.innerHTML = translations[lang][key];
+            });
+
+            document.documentElement.classList.remove("lang-loading");
+        }, 500);
     });
 });
 
