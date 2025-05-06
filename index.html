@@ -18,18 +18,27 @@
                 <img class="logo-small" src="images/huale-steel-small-logo.png" alt="huale-steel-logo">
             </a>
             <nav class="page-menu">
-                <a href="about_us.html" class="pages" id="about-us">ABOUT US</a>
-                <a href="products_and_services.html" class="pages" id="products-and-services">PRODUCTS & SERVICES</a>
-                <a href="subsidiaries_and_partners.html" class="pages" id="subsidiaries-and-partners">SUBSIDIARIES & PARTNERS</a>
-                <a href="contact_us.html" class="pages" id="contact-us">CONTACT US</a>
+                <a href="index.html" data-i18n="home_header" class="pages">HOME</a>
+                <a href="about_us.html" data-i18n="about_us_header" class="pages" id="about-us">ABOUT US</a>
+                <a href="products_and_services.html" data-i18n="products_and_services_header" class="pages" id="products-and-services">PRODUCTS & SERVICES</a>
+                <a href="subsidiaries_and_partners.html" data-i18n="subsidiaries_and_partners_header" class="pages" id="subsidiaries-and-partners">SUBSIDIARIES & PARTNERS</a>
+                <a href="contact_us.html" data-i18n="contact_us" class="pages" id="contact-us">CONTACT US</a>
             </nav>
+            <div class="dropdown">
+                <div class="selected" data-lang="en">EN</div>
+                <p class="dropdown-arrow">▼</p>
+                    <div class="dropdown-options">
+                        <div data-lang="kh">ខ្មែរ</div>
+                        <div data-lang="zh">中文</div>
+                    </div>
+            </div>
         </div>
     </div>
 
     <!--HERO-BANNER-->
     <div class="hero-banner">
-        <h1 id="tagline">Together We Develop,<br>Together We Prosper</h1>
-        <button id="cta-button" onclick="location.href='products_and_services.html'">Explore Our Products</button>
+        <h1 data-i18n="tagline" id="tagline">Together We Develop,<br>Together We Prosper</h1>
+        <button id="cta-button" data-i18n="explore_products" onclick="location.href='products_and_services.html'">Explore Our Products</button>
     </div>
 
     <!--ABOUT US SUMMARY-->
@@ -45,24 +54,28 @@
     <!--FOOTER-->
     <div class="footer-box">
         <div id="quick-links-menu">
-            <h3 class="footer-header">QUICK LINKS</h3>
+            <h3 class="footer-header" data-i18n="quick_links">QUICK LINKS</h3>
             <nav class="footer-menu">
-                <a href="about_us.html">About Us</a>
-                <a href="products_and_services.html">Products & Services</a>
-                <a href="subsidiaries_and_partners.html">Subsidiaries & Partners</a>
-                <a href="contact_us.html">Contact Us</a>
+                <a href="index.html" data-i18n="home_footer">Home</a>
+                <a href="about_us.html" data-i18n="about_us_footer">About Us</a>
+                <a href="products_and_services.html" data-i18n="products_and_services_footer">Products & Services</a>
+                <a href="subsidiaries_and_partners.html" data-i18n="subsidiaries_and_partners_footer">Subsidiaries & Partners</a>
+                <a href="contact_us.html" data-i18n="contact_us">Contact Us</a>
             </nav>
         </div>
         <div id="contact-us-menu">
-            <h3 class="footer-header">CONTACT US</h3>
+            <h3 class="footer-header" data-i18n="contacts">CONTACT US</h3>
             <nav class="footer-menu">
-                <a href="tel:+85560801999">+855 60 801 999 (CAMBODIA)</a>
-                <a href="tel:+61432168168">+61 432 168 168 (AUSTRALIA)</a>
+                <a href="tel:+85560801999" data-i18n="cambodia_tel">+855 60 801 999 (CAMBODIA)</a>
+                <a href="tel:+61432168168" data-i18n="australia_tel">+61 432 168 168 (AUSTRALIA)</a>
                 <a href="https://t.me/hualesteel">Huale Steel Telegram</a>
                 <a href="https://web.facebook.com/profile.php?id=61568759048866">Huale Steel Cambodia Facebook</a>
+                <a href="https://maps.app.goo.gl/rmtythswUZiMAFeH9">Special Economic Zone of Sihanoukville Autonomous Port, Sihanoukville Province, Cambodia</a>
             </nav>
         </div>
         <p id="copyright">© 2025 Huale Steel. All Rights Reserved</p>
     </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
