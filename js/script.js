@@ -79,6 +79,13 @@ const translations = {
         australia_tel : "<i class='fa-solid fa-phone' style='color : black'></i>&nbsp;(+61) 432 168 168 (AUSTRALIA)",
         social_media : "SOCIAL MEDIA",
         contact_form : "EMAIL US",
+        read_more : "Read more&nbsp;<i class='fa-solid fa-chevron-right' style='transform : scale(0.8); margin-top : 32px'></i>",
+        established : "ESTABLISHED",
+        capacity : "CAPACITY",
+        tons : "600 tons/day",
+        locations : "LOCATIONS",
+        cambodia_and_china : "Cambodia & China",
+        summary : "Built on a foundation of international steel trade strengthened by strong Cambodia–China relations,<br> HUALE STEEL was established to harness Cambodia’s strategic economic position.",
     },
 
     // Khmer
@@ -101,7 +108,14 @@ const translations = {
         cambodia_tel : "<i class='fa-solid fa-phone' style='color : black'></i>&nbsp;(+855) 60 801 999 (កម្ពុជា)",
         australia_tel : "<i class='fa-solid fa-phone' style='color : black'></i>&nbsp;(+61) 432 168 168 (អូស្ត្រាលី)",
         social_media : "ប្រព័ន្ធផ្សព្វផ្សាយសង្គម",
-        contact_form : "អ៊ីមែលមកយើង"
+        contact_form : "អ៊ីមែលមកយើង",
+        read_more : "អានបន្ថែម&nbsp;<i class='fa-solid fa-chevron-right' style='transform : scale(0.8); margin-top : 32px'></i>",
+        established : "បានបង្កើតឡើង",
+        capacity : "សមត្ថភាព",
+        tons : "600 តោន/ថ្ងៃ",
+        locations : "ទីតាំង",
+        cambodia_and_china : "កម្ពុជា និងចិន",
+        summary : "សាងសង់នៅលើមូលដ្ឋាននៃពាណិជ្ជកម្មដែកអន្តរជាតិដែលពង្រឹងដោយទំនាក់ទំនងកម្ពុជា-ចិនដ៏រឹងមាំ<br>HUALE STEEL ត្រូវបានបង្កើតឡើងដើម្បីដណ្តើមយកទីតាំងសេដ្ឋកិច្ចជាយុទ្ធសាស្ត្ររបស់កម្ពុជា។",
     },
 
     // Chinese (Simplified)
@@ -124,6 +138,13 @@ const translations = {
         cambodia_tel : "<i class='fa-solid fa-phone' style='color : black'></i>&nbsp;(+855) 60 801 999 (柬埔寨)",
         australia_tel : "<i class='fa-solid fa-phone' style='color : black'></i>&nbsp;(+61) 432 168 168 (澳大利亚)",
         social_media : "社交媒体",
-        contact_form : "给我们发电子邮件"
+        contact_form : "给我们发电子邮件",
+        read_more : "阅读更多&nbsp;<i class='fa-solid fa-chevron-right' style='transform : scale(0.8); margin-top : 32px'></i>",
+        established : "已确立的",
+        capacity : "容量",
+        tons : "600 吨/天",
+        locations : "地点",
+        cambodia_and_china : "柬埔寨和中国",
+        summary : "华乐钢铁的成立建立在柬中两国紧密合作的国际钢铁贸易基础上，<br>旨在提升柬埔寨的战略经济地位。",
     }
 };

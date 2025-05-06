@@ -206,8 +206,13 @@ body {
     margin-top : 64px;
 }
 #read-more {
+    font-weight : 500;
     text-decoration : none;
     color : #b4b4b4;
+    position : absolute;
+    left : 50%;
+    bottom : 32px;
+    transform : translateX(-50%);
     transition : color 0.2s;
 }
 #read-more:hover {
@@ -295,7 +300,7 @@ body {
     top : 10%;
     font-weight : 600;
     position : absolute;
-    left : 15%;
+    left : 5%;
 }
 /*CONTACT INFO*/
 #contact-info {
@@ -307,7 +312,7 @@ body {
 #contact-info-header {
     font-weight : 600;
     position : absolute;
-    left : 15%;
+    left : 5%;
 }
 #contact-info-menu {
     font-weight : 500;
@@ -318,7 +323,7 @@ body {
     margin-bottom : 50px;
     position : absolute;
     width : 300px;
-    left : 15%;
+    left : 5%;
 }
 #contact-info-menu a {
     text-decoration : none;
@@ -330,7 +335,7 @@ body {
 }
 #map {
     position : absolute;
-    width : 50%;
+    width : 60%;
     height : 400px;
     right : 112px;
     border-radius : 16px;
