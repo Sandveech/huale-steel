@@ -3,6 +3,24 @@ html.lang-loading {
     visibility : hidden;
 }
 
+/*TRANSITIONS*/
+#transition-overlay {
+    position : fixed;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background : white;
+    z-index : 9999;
+    pointer-events : none;
+    opacity : 0;
+    transition : opacity 0.5s ease;
+}
+#transition-overlay.show {
+    opacity : 1;
+    pointer-events : all;
+}
+
 /*BODY*/
 body {
     margin : 0;
@@ -94,15 +112,15 @@ body {
     font-family : "Roboto";
     font-weight : 600;
     padding : 8px 12px;
-    border-radius : 4px;
 }
 .dropdown-options {
     position: absolute;
-    top: 50%;
-    left: 0;
+    top: 40%;
     width: 100%;
     display: none;
     z-index: 100;
+    left : -16px;
+    box-shadow : 8px 16px 24px black;
 }
 .dropdown:hover .dropdown-options {
     display: block;
@@ -110,11 +128,12 @@ body {
 .dropdown-options div {
     font-family : "Roboto", sans-serif;
     font-weight : 600;
-    padding: 4px 12px;
+    padding-top : 12px;
     color : white;
     background: #021e87;
-    box-shadow: 0px 1px 24px #b4b4b4;
-    height : 24px;
+    text-align : center;
+    height : 32px;
+    width : 80px;
     transition : 
         background 0.3s ease,
         color 0.3s ease;
@@ -208,15 +227,19 @@ body {
 #read-more {
     font-weight : 500;
     text-decoration : none;
-    color : #b4b4b4;
+    color : black;
+    opacity : 0.5;
     position : absolute;
     left : 50%;
     bottom : 32px;
     transform : translateX(-50%);
-    transition : color 0.2s;
+    transition :
+        color 0.2s ease,
+        opacity 0.2s ease;
 }
 #read-more:hover {
     color : #e00225;
+    opacity : 1;
 }
 
 /*QUICK STATS BAR*/
@@ -246,25 +269,79 @@ body {
 }
 
 /*FULL STORY*/
-#full-story {
+#story-container {
     height : 500px;
     background-color : white;
     position : relative;
+    font-family : "Roboto", sans-serif;
+}
+#story-container div {
+    left : 10%;
+    width : 25%;
+    height : inherit;
+    font-weight : 500;
+    text-align : left;
+    position : absolute;
+    padding-top : 128px;
+}
+#story-container h1 {
+    font-size : 3rem;
 }
 /*MISSION*/
-#mission {
+#mission-container {
     height : 500px;
     background-color : white;
     position : relative;
+    font-family : "Roboto", sans-serif;
+}
+#mission-container div {
+    right : 10%;
+    width : 25%;
+    height : inherit;
+    font-weight : 500;
+    text-align : left;
+    position : absolute;
+    padding-top : 128px;
+}
+#mission-container h1 {
+    font-size : 3rem;
 }
 /*VISION*/
-#vision {
+#vision-container {
+    height : 500px;
+    background-color : white;
+    position : relative;
+    font-family : "Roboto", sans-serif;
+}
+#vision-container div {
+    left : 10%;
+    width : 25%;
+    height : inherit;
+    font-weight : 500;
+    text-align : left;
+    position : absolute;
+    padding-top : 128px;
+}
+#vision-container h1 {
+    font-size : 3rem;
+}
+
+/*ROLLED SHEET*/
+#rolled-sheet {
     height : 500px;
     background-color : white;
     position : relative;
 }
-/*PROFILE*/
-#profile {
+
+/*GALVANIZED COIL*/
+#galvanized-coil {
+    height : 500px;
+    background-color : white;
+    position : relative;
+}
+
+/*APPLICATIONS INDUSTRIES*/
+#applications-industries {
     height : 500px;
     background-color : white;
     position : relative;
@@ -300,7 +377,7 @@ body {
     top : 10%;
     font-weight : 600;
     position : absolute;
-    left : 5%;
+    left : 10%;
 }
 /*CONTACT INFO*/
 #contact-info {
@@ -312,7 +389,7 @@ body {
 #contact-info-header {
     font-weight : 600;
     position : absolute;
-    left : 5%;
+    left : 10%;
 }
 #contact-info-menu {
     font-weight : 500;
@@ -323,7 +400,7 @@ body {
     margin-bottom : 50px;
     position : absolute;
     width : 300px;
-    left : 5%;
+    left : 10%;
 }
 #contact-info-menu a {
     text-decoration : none;
@@ -335,9 +412,9 @@ body {
 }
 #map {
     position : absolute;
-    width : 60%;
+    width : 50%;
     height : 400px;
-    right : 112px;
+    right : 10%;
     border-radius : 16px;
     box-shadow: 0px 1px 24px #b4b4b4;
 }

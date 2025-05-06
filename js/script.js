@@ -1,3 +1,34 @@
+// Transitions
+
+window.addEventListener("DOMContentLoaded", () => {
+    const overlay = document.getElementById("transition-overlay");
+    overlay.classList.remove("show");
+});
+
+document.querySelectorAll("a, button").forEach(el => {
+    el.addEventListener("click", e => {
+    const overlay = document.getElementById("transition-overlay");
+
+        // Handle <a> links
+        if (el.tagName.toLowerCase() === "a") {
+        const href = el.getAttribute("href");
+        if (href && !href.startsWith("#") && !href.startsWith("javascript:")) {
+            e.preventDefault();
+            overlay.classList.add("show");
+            setTimeout(() => window.location.href = href, 500);
+        }
+
+        // Handle <button data-href="...">
+        }
+        else if (el.tagName.toLowerCase() === "button" && el.dataset.href) {
+            e.preventDefault();
+            overlay.classList.add("show");
+            setTimeout(() => window.location.href = el.dataset.href, 500);
+        }
+    });
+});
+
+
 // Apply saved language on page load
 document.addEventListener("DOMContentLoaded", () => {
     const savedLang = localStorage.getItem("lang") || "en";
@@ -115,7 +146,7 @@ const translations = {
         tons : "600 តោន/ថ្ងៃ",
         locations : "ទីតាំង",
         cambodia_and_china : "កម្ពុជា និងចិន",
-        summary : "សាងសង់នៅលើមូលដ្ឋាននៃពាណិជ្ជកម្មដែកអន្តរជាតិដែលពង្រឹងដោយទំនាក់ទំនងកម្ពុជា-ចិនដ៏រឹងមាំ<br>HUALE STEEL ត្រូវបានបង្កើតឡើងដើម្បីដណ្តើមយកទីតាំងសេដ្ឋកិច្ចជាយុទ្ធសាស្ត្ររបស់កម្ពុជា។",
+        summary : "សាងសង់នៅលើមូលដ្ឋាននៃពាណិជ្ជកម្មដែកអន្តរជាតិដែលពង្រឹងដោយទំនាក់ទំនងកម្ពុជា-ចិនដ៏រឹងមាំ<br>HUALE STEEL ត្រូវបានបង្កើតឡើងដើម្បីទាញយកទីតាំងសេដ្ឋកិច្ចជាយុទ្ធសាស្ត្ររបស់កម្ពុជា។",
     },
 
     // Chinese (Simplified)
