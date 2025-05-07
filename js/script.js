@@ -1,3 +1,9 @@
+// Utility Functions
+
+function getElementId(id) {
+    return document.getElementById(id);
+}
+
 // Transitions
 
 window.addEventListener("load", () => {
@@ -25,170 +31,157 @@ document.querySelectorAll("a, button").forEach(el => {
     });
 });
 
-// Link Highlights
-document.addEventListener("DOMContentLoaded", () => {
-    const currentPage = window.location.pathname.split("/").pop();
-    document.querySelectorAll("a.pages").forEach(link => {
-        if (link.getAttribute("href") === currentPage) {
-            link.classList.add("active");
-        }
-    });
-});
+// Sidebar
+
+const hamburger = getElementId("hamburger");
+const sidebar = getElementId("sidebar");
+const close_sidebar = getElementId("close-sidebar");
 
 
-// Apply saved language on page load
-document.addEventListener("DOMContentLoaded", () => {
-    const savedLang = localStorage.getItem("lang") || "en";
-    const selected = document.querySelector('.selected');
-    const dropdownOptions = document.querySelectorAll('.dropdown-options div');
-    const overlay = document.getElementById('transition-overlay');
+hamburger.addEventListener("click", () => {
+    sidebar.classList.toggle("active");
+})
+close_sidebar.addEventListener("click", () => {
+    sidebar.classList.toggle("active");
+})
 
-    overlay.classList.add("show");
+// Localization
 
-    setTimeout(() => { overlay.classList.remove("show"); }, 500);
-    
-    dropdownOptions.forEach(option => {
-        if (option.dataset.lang === savedLang) {
-            const prev_lang = selected.textContent;
-            selected.textContent = option.textContent;
-            option.textContent = prev_lang;
+const languages = {
+    en : "English",
+    kh : "ខ្មែរ",
+    zh : "中文",
+}
 
-            const data_prev_lang = selected.getAttribute("data-lang");
-            selected.setAttribute("data-lang", option.getAttribute("data-lang"));
-            option.setAttribute("data-lang", data_prev_lang);
-        }
-    });
+const translations = {
+    en : {
+        // Header
+        home : "HOME",
+        about_us : "ABOUT US",
+        subsidiaries_n_partners : "SUBSIDIARIES & PARTNERS",
+        products_n_services : "PRODUCTS & SERVICES",
+        contact_us : "CONTACT US",
 
-    document.querySelectorAll("[data-i18n]").forEach(el => {
+        // Body
+        tagline : "TOGETHER WE DEVELOP,<br>TOGETHER WE PROSPER",
+        explore_our_products : "Explore Our Products",
+
+        // Footer
+        home_alt : "Home",
+        about_us_alt : "About Us",
+        subsidiaries_n_partners_alt : "Subsidiaries & Partners",
+        products_n_services_alt : "Products & Services",
+        contact_us_alt : "Contact Us",
+        quick_links : "QUICK LINKS",
+        social_media : "SOCIAL MEDIA",
+        facebook : "<i class='fa-brands fa-facebook'>&nbsp;</i> Facebook",
+        telegram : "<i class='fa-brands fa-telegram'>&nbsp;</i> Telegram",
+    },
+    kh : {
+        // Header
+        home : "ទំព័រដើម",
+        about_us : "អំពីយើងខ្ញុំ",
+        subsidiaries_n_partners : "ក្រុមហ៊ុនបុត្រសម្ព័ន្ធ និងដៃគូ",
+        products_n_services : "ផលិតផល និងសេវាកម្ម",
+        contact_us : "ទំនាក់ទំនងយើងខ្ញុំ",
+
+        // Body
+        tagline : "យើងអភិវឌ្ឍ<br>យើងរីកចម្រើន",
+        explore_our_products : "រុករកផលិតផលរបស់យើង",
+
+        // Footer
+        home_alt : "ទំព័រដើម",
+        about_us_alt : "អំពីយើងខ្ញុំ",
+        subsidiaries_n_partners_alt : "ក្រុមហ៊ុនបុត្រសម្ព័ន្ធ និងដៃគូ",
+        products_n_services_alt : "ផលិតផល និងសេវាកម្ម",
+        contact_us_alt : "ទំនាក់ទំនងយើងខ្ញុំ",
+        quick_links : "តំណភ្ជាប់រហ័ស",
+        social_media : "ប្រព័ន្ធផ្សព្វផ្សាយសង្គម",
+        facebook : "<i class='fa-brands fa-facebook'>&nbsp;</i> ហ្វេសប៊ុក",
+        telegram : "<i class='fa-brands fa-telegram'>&nbsp;</i> តេឡេក្រាម",
+    },
+    zh : {
+        // Header
+        home : "主页",
+        about_us : "关于我们",
+        subsidiaries_n_partners : "子公司及合作伙伴",
+        products_n_services : "产品与服务",
+        contact_us : "联系我们",
+
+        // Body
+        tagline : "共同发展,<br>共同繁荣",
+        explore_our_products : "探索我们的产品",
+
+        // Footer
+        home_alt : "主页",
+        about_us_alt : "关于我们",
+        subsidiaries_n_partners_alt : "子公司及合作伙伴",
+        products_n_services_alt : "产品与服务",
+        contact_us_alt : "联系我们",
+        quick_links : "快速链接",
+        social_media : "社交媒体",
+        facebook : "<i class='fa-brands fa-facebook'>&nbsp;</i> Facebook",
+        telegram : "<i class='fa-brands fa-telegram'>&nbsp;</i> Telegram",
+    }
+}
+
+let currentLang = localStorage.getItem("preferredLanguage") || "en";
+
+function applyLanguage(lang) {
+    const elements = document.querySelectorAll("[data-i18n]");
+    elements.forEach(el => {
         const key = el.getAttribute("data-i18n");
-        el.innerHTML = translations[savedLang][key];
+        el.innerHTML = translations[lang][key] || key;
     });
 
-    document.documentElement.classList.remove("lang-loading");
-});
+    document.querySelector("#lang-label span").textContent = languages[lang];
 
-// Dropdown click handler with localStorage support
-document.querySelectorAll('.dropdown-options div').forEach(option => {
-    option.addEventListener('click', () => {
-        const lang = option.dataset.lang;
-        const selected = document.querySelector('.selected');
-        const prev_lang = selected.textContent;
-        const overlay = document.getElementById('transition-overlay');
+    localStorage.setItem("preferredLanguage", lang);
+    currentLang = lang;
+}
 
-        // Start with white overlay visible
-        overlay.classList.add("show");
+function updateLanguageDropdown() {
+    const optionsContainer = document.getElementById("lang-options");
 
-        setTimeout(() => { overlay.classList.remove("show");
+    optionsContainer.innerHTML = "";
 
-            selected.textContent = option.textContent;
-            option.textContent = prev_lang;
+    Object.entries(languages).forEach(([code, name]) => {
+        if (code !== currentLang) {
+            const option = document.createElement("a");
+            option.href = "#";
+            option.textContent = name;
 
-            // Swap data attributes
-            const data_prev_lang = selected.getAttribute("data-lang");
-            selected.setAttribute("data-lang", option.getAttribute("data-lang"));
-            option.setAttribute("data-lang", data_prev_lang);
-
-            localStorage.setItem("lang", lang);
-
-            document.querySelectorAll("[data-i18n]").forEach(el => {
-                const key = el.getAttribute("data-i18n");
-                el.innerHTML = translations[lang][key];
+            option.addEventListener("click", (e) => {
+                const overlay = document.getElementById('transition-overlay');
+                overlay.classList.add("show");
+                setTimeout(() => { 
+                    overlay.classList.remove("show");
+                    e.preventDefault();
+                    applyLanguage(code);
+                    updateLanguageDropdown();
+                }, 500);
             });
 
-            document.documentElement.classList.remove("lang-loading");
-        }, 500);
+            optionsContainer.appendChild(option);
+        }
     });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const overlay = document.getElementById('transition-overlay');
+    overlay.classList.add("show");
+    setTimeout(() => { 
+        overlay.classList.remove("show");
+    }, 500);
+
+    // Language
+    const savedLang = localStorage.getItem("preferredLanguage") || "en";
+    applyLanguage(savedLang);
+    updateLanguageDropdown();
+
+    // Navigation Link Highlight
+    const currentPage = window.location.pathname.split("/").pop();
+    document.querySelectorAll(".nav-link").forEach(link => {
+        if (link.getAttribute("href") === currentPage) { link.classList.add("active"); }
+    })
 });
-
-// Translations
-const translations = {
-    // English
-    en : {
-        tagline : "Together We Develop,<br>Togther We Prosper",
-        explore_products : "Explore Our Products",
-        contact_us_header : "CONTACT US",
-        contact_us_footer : "Contact Us",
-        contacts : "CONTACTS",
-        contact_information : "CONTACT INFORMATION",
-        home_header : "HOME",
-        home_footer : "Home",
-        subsidiaries_and_partners_header : "SUBSIDIARIES & PARTNERS",
-        subsidiaries_and_partners_footer : "Subsidiaries & Partners",
-        products_and_services_header : "PRODUCTS & SERVICES",
-        products_and_services_footer : "Products & Services",
-        about_us_header : "ABOUT US",
-        about_us_footer : "About Us",
-        quick_links : "QUICK LINKS",
-        cambodia_tel : "<i class='fa-solid fa-phone' style='color : black'></i>&nbsp;(+855) 60 801 999 (CAMBODIA)",
-        australia_tel : "<i class='fa-solid fa-phone' style='color : black'></i>&nbsp;(+61) 432 168 168 (AUSTRALIA)",
-        social_media : "SOCIAL MEDIA",
-        contact_form : "EMAIL US",
-        read_more : "Read more&nbsp;<i class='fa-solid fa-chevron-right' style='transform : scale(0.8); margin-top : 32px'></i>",
-        established : "ESTABLISHED",
-        capacity : "CAPACITY",
-        tons : "600 tons/day",
-        locations : "LOCATIONS",
-        cambodia_and_china : "Cambodia & China",
-        summary : "Built on a foundation of international steel trade strengthened by strong Cambodia–China relations,<br> HUALE STEEL was established to harness Cambodia’s strategic economic position.",
-    },
-
-    // Khmer
-    kh : {
-        tagline : "យើងរួមគ្នាអភិវឌ្ឍ<br>យើងរួមគ្នារីកចម្រើន",
-        explore_products : "រុករកផលិតផលរបស់យើង",
-        contact_us_header : "ទំនាក់ទំនងយើងខ្ញុំ",
-        contact_us_footer : "ទំនាក់ទំនងយើងខ្ញុំ",
-        contacts : "ទំនាក់ទំនង",
-        contact_information : "ព័ត៌មានទំនាក់ទំនង",
-        home_header : "ទំព័រដើម",
-        home_footer : "ទំព័រដើម",
-        subsidiaries_and_partners_header : "ក្រុមហ៊ុនបុត្រសម្ព័ន្ធ និងដៃគូ",
-        subsidiaries_and_partners_footer : "ក្រុមហ៊ុនបុត្រសម្ព័ន្ធ និងដៃគូ",
-        products_and_services_header : "ផលិតផល និងសេវាកម្ម",
-        products_and_services_footer : "ផលិតផល និងសេវាកម្ម",
-        about_us_header : "អំពីយើងខ្ញុំ",
-        about_us_footer : "អំពីយើងខ្ញុំ",
-        quick_links : "តំណភ្ជាប់រហ័ស",
-        cambodia_tel : "<i class='fa-solid fa-phone' style='color : black'></i>&nbsp;(+855) 60 801 999 (កម្ពុជា)",
-        australia_tel : "<i class='fa-solid fa-phone' style='color : black'></i>&nbsp;(+61) 432 168 168 (អូស្ត្រាលី)",
-        social_media : "ប្រព័ន្ធផ្សព្វផ្សាយសង្គម",
-        contact_form : "អ៊ីមែលមកយើង",
-        read_more : "អានបន្ថែម&nbsp;<i class='fa-solid fa-chevron-right' style='transform : scale(0.8); margin-top : 32px'></i>",
-        established : "បានបង្កើតឡើង",
-        capacity : "សមត្ថភាព",
-        tons : "600 តោន/ថ្ងៃ",
-        locations : "ទីតាំង",
-        cambodia_and_china : "កម្ពុជា និងចិន",
-        summary : "សាងសង់នៅលើមូលដ្ឋាននៃពាណិជ្ជកម្មដែកអន្តរជាតិដែលពង្រឹងដោយទំនាក់ទំនងកម្ពុជា-ចិនដ៏រឹងមាំ<br>HUALE STEEL ត្រូវបានបង្កើតឡើងដើម្បីទាញយកទីតាំងសេដ្ឋកិច្ចជាយុទ្ធសាស្ត្ររបស់កម្ពុជា។",
-    },
-
-    // Chinese (Simplified)
-    zh : {
-        tagline : "共同发展, 共同繁荣",
-        explore_products : "探索我们的产品",
-        contact_us_header : "联系我们",
-        contact_us_footer : "联系我们",
-        contacts : "联系人",
-        contact_information : "联系信息",
-        home_header : "主页",
-        home_footer : "主页",
-        subsidiaries_and_partners_header : "子公司及合作伙伴",
-        subsidiaries_and_partners_footer : "子公司及合作伙伴",
-        products_and_services_header : "产品与服务",
-        products_and_services_footer : "产品与服务",
-        about_us_header : "关于我们",
-        about_us_footer : "关于我们",
-        quick_links : "快速链接",
-        cambodia_tel : "<i class='fa-solid fa-phone' style='color : black'></i>&nbsp;(+855) 60 801 999 (柬埔寨)",
-        australia_tel : "<i class='fa-solid fa-phone' style='color : black'></i>&nbsp;(+61) 432 168 168 (澳大利亚)",
-        social_media : "社交媒体",
-        contact_form : "给我们发电子邮件",
-        read_more : "阅读更多&nbsp;<i class='fa-solid fa-chevron-right' style='transform : scale(0.8); margin-top : 32px'></i>",
-        established : "已确立的",
-        capacity : "容量",
-        tons : "600 吨/天",
-        locations : "地点",
-        cambodia_and_china : "柬埔寨和中国",
-        summary : "华乐钢铁的成立建立在柬中两国紧密合作的国际钢铁贸易基础上，<br>旨在提升柬埔寨的战略经济地位。",
-    }
-};
