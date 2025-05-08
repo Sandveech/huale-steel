@@ -64,7 +64,7 @@ const translations = {
 
         // Body
         tagline : "TOGETHER WE DEVELOP,<br>TOGETHER WE PROSPER",
-        explore_our_products : "Explore Our Products",
+        explore_our_products : "Explore Our Products<i class='fa-solid fa-arrow-right explore-arrow'></i>",
 
         // Footer
         home_alt : "Home",
@@ -87,7 +87,7 @@ const translations = {
 
         // Body
         tagline : "យើងអភិវឌ្ឍ<br>យើងរីកចម្រើន",
-        explore_our_products : "រុករកផលិតផលរបស់យើង",
+        explore_our_products : "រុករកផលិតផលរបស់យើង<i class='fa-solid fa-arrow-right explore-arrow'></i>",
 
         // Footer
         home_alt : "ទំព័រដើម",
@@ -110,7 +110,7 @@ const translations = {
 
         // Body
         tagline : "共同发展,<br>共同繁荣",
-        explore_our_products : "探索我们的产品",
+        explore_our_products : "探索我们的产品<i class='fa-solid fa-arrow-right explore-arrow'></i>",
 
         // Footer
         home_alt : "主页",
