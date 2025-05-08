@@ -194,7 +194,7 @@ header {
     font-size : 1rem;
     z-index : 10;
     white-space : nowrap;
-    color : #333;
+    color : black;
     transition :
         color 0.3s ease;
     font-family : "Roboto", sans-serif;
@@ -202,7 +202,6 @@ header {
 }
 
 .dropdown-btn .icon-normal {
-    color : #333;
     padding-top : 3px;
 }
 
@@ -342,15 +341,22 @@ header {
     z-index : 1;
 }
 
+.explore-our-products {
+
+    width : 28vw;
+    height : 5vw;
+    position: absolute;
+    top : 24vw;
+    left : 8vw;
+}
+
 .explore-button {
     position : absolute;
     background-color: #e00225;
     color : white;
     font-size : 1.7vw;
-    width : 28vw;
-    height : 5vw;
-    top : 24vw;
-    left : 8vw;
+    width : inherit;
+    height : inherit;
     border-radius : 3vw;
     border : none;
     font-family : "Roboto", sans-serif;
@@ -365,22 +371,22 @@ header {
     position : absolute;
     opacity : 0;
     color : white;
+    top : 1.5vw;
+    left : 21vw;
     transition : 
         opacity 0.2s ease,
-        padding-left 0.2s ease;
+        left 0.3s ease;
     pointer-events : none;
-    font-size : 1.5em;
-    padding-left : 1em;
-    margin-top : -0.1em;
+}
+
+.explore-our-products:hover .explore-arrow {
+    opacity : 1;
+    left : 23vw;
 }
 
 .explore-button:hover {
     background-color : #021e87;
     padding-right : 32px;
-}
-
-.explore-button:hover .explore-arrow {
-    opacity : 1;
 }
 
 .quick-stats-container {
@@ -438,11 +444,10 @@ footer {
     padding-top : 1rem;
     text-align : center;
     font-size : 0.9rem;
-    border-top : 1px solid white;
 }
 
 /* Responsive Design For Smaller Screens */
-@media (max-width: 1144px) {
+@media (max-width: 1080px) {
     .container {
         padding : 10px;
     }
