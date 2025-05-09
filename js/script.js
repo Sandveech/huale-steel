@@ -65,6 +65,9 @@ const translations = {
         // Body
         tagline : "TOGETHER WE DEVELOP,<br>TOGETHER WE PROSPER",
         explore_our_products : "Explore Our Products<i class='fa-solid fa-arrow-right explore-arrow'></i>",
+        get_in_touch : "Get In Touch",
+        cambodia_tel : "<i class='fa-solid fa-phone'></i>&nbsp;(+855) 60 801 999 (CAMBODIA)",
+        australia_tel : "<i class='fa-solid fa-phone'></i>&nbsp;(+61) 432 168 168 (AUSTRALIA)",
 
         // Footer
         home_alt : "Home",
@@ -88,6 +91,9 @@ const translations = {
         // Body
         tagline : "យើងអភិវឌ្ឍ<br>យើងរីកចម្រើន",
         explore_our_products : "រុករកផលិតផលរបស់យើង<i class='fa-solid fa-arrow-right explore-arrow'></i>",
+        get_in_touch : "Get In Touch",
+        cambodia_tel : "<i class='fa-solid fa-phone'></i> (+855) 60 801 999 (កម្ពុជា)",
+        australia_tel : "<i class='fa-solid fa-phone'></i> (+61) 432 168 168 (អូស្រ្តាលី)",
 
         // Footer
         home_alt : "ទំព័រដើម",
@@ -111,6 +117,9 @@ const translations = {
         // Body
         tagline : "共同发展,<br>共同繁荣",
         explore_our_products : "探索我们的产品<i class='fa-solid fa-arrow-right explore-arrow'></i>",
+        get_in_touch : "Get In Touch",
+        cambodia_tel : "<i class='fa-solid fa-phone'></i> (+855) 60 801 999 (柬埔寨)",
+        australia_tel : "<i class='fa-solid fa-phone'></i> (+61) 432 168 168 (澳大利亚)",
 
         // Footer
         home_alt : "主页",
