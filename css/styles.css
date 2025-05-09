@@ -74,6 +74,10 @@ a {
     text-decoration : none;
 }
 
+.disabled {
+    pointer-events : none;
+}
+
 .nav-link {
     font-size : 1rem;
     transition :
@@ -335,7 +339,7 @@ header {
     color : white;
     position : absolute;
     top : 4vw;
-    left : 8vw;
+    left : 7vw;
     font-family: "Bebas Neue";
     font-size : 6vw;
     line-height : 1;
@@ -350,7 +354,7 @@ header {
     width : 28vw;
     height : 5vw;
     top : 24vw;
-    left : 8vw;
+    left : 7vw;
     border-radius : 3vw;
     border : none;
     font-family : "Roboto", sans-serif;

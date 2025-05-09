@@ -48,7 +48,7 @@ close_sidebar.addEventListener("click", () => {
 // Localization
 
 const languages = {
-    en : "English",
+    en : "EN",
     kh : "ខ្មែរ",
     zh : "中文",
 }
@@ -170,9 +170,7 @@ function updateLanguageDropdown() {
 document.addEventListener("DOMContentLoaded", () => {
     const overlay = document.getElementById('transition-overlay');
     overlay.classList.add("show");
-    setTimeout(() => { 
-        overlay.classList.remove("show");
-    }, 500);
+    setTimeout(() => { overlay.classList.remove("show"); }, 500);
 
     // Language
     const savedLang = localStorage.getItem("preferredLanguage") || "en";
