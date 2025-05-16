@@ -1,0 +1,215 @@
+/*===Main===*/
+
+.hero-container { 
+    position : relative;
+    width : 100%;
+    height : 800px;
+    overflow : hidden;
+}
+
+.hero-container img {
+    width : 100%;
+    height : 100%;
+    object-fit : cover;
+    object-position : center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background : rgba(2, 30, 135, 0.4);
+}
+
+.tagline { 
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    position : absolute;
+    color : white;
+    font-family : "Bebas Neue";
+    font-weight : 200;
+    letter-spacing : 0.125rem;
+    font-size : 3em;
+    width : max-content;
+    line-height : 1;
+}
+
+html[lang="zh"] .tagline {
+    font-weight : 600;
+}
+
+html[lang="kh"] .tagline {
+    font-weight : 600;
+}
+
+.explore-our-products-button {
+    position : absolute;
+    top : 30em;
+    left : 50%;
+    transform : translateX(-50%);
+    background : #e00225;
+    color : white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    font-size : 1em;
+    padding-top : 0.75em;
+    padding-bottom : 0.75em;
+    padding-left : 2.5em;
+    padding-right : 2.5em;
+    border-radius : 32px;
+    width : max-content;
+    transition : background 0.2s ease;
+    font-family : "Roboto Flex";
+    font-weight : 500;
+}
+
+.explore-our-products-button:hover {
+    background : #021e87;
+}
+
+.about-us-container {
+    background-color : white;
+    font-family : "Bebas Neue", sans-serif;
+    text-align : center;
+    padding-top : 4em;
+    padding-bottom : 4em;
+    padding-left : 2em;
+    padding-right : 2em;
+}
+
+.about-us-container a {
+    color : #666;
+}
+
+.about-us-container button {
+    background : #e00225;
+    color : white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    font-size : 1em;
+    padding-top : 0.75em;
+    padding-bottom : 0.75em;
+    padding-left : 2.5em;
+    padding-right : 2.5em;
+    border-radius : 32px;
+    width : max-content;
+    transition : background 0.2s ease;
+    font-family : "Roboto Flex";
+    font-weight : 500;
+}
+
+.about-us-container button:hover {
+    background : #021e87;
+}
+
+.read-more-button {
+    margin-top : 64px;
+}
+
+.location-background img {
+    display : block;
+    width : 100%;
+    height : auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.quick-stats-container {
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    text-align : center;
+    gap : 3em;
+    flex-direction : column;
+    flex-wrap : wrap;
+    background-color : #e00225;
+    color : white;
+    font-family : "Bebas Neue", sans-serif;
+    font-size : 3em;
+    padding-top : 64px;
+    padding-bottom : 64px;
+    line-height : 1;
+}
+
+.capacity {
+    border-top : 3px solid white;
+    border-bottom : 3px solid white;
+    padding-top : 128px;
+    padding-bottom : 128px;
+}
+
+/*===Media Queries===*/
+
+@media only screen and (max-width : 600px) {
+
+}
+
+@media only screen and (min-width : 600px) {
+    .tagline { 
+        font-size : 4em;
+    }
+
+    .explore-our-products-button {
+        top : 32em;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .tagline { 
+        font-size : 6em;
+    }
+
+    .explore-our-products-button {
+        top : 34em;
+    }
+}
+
+@media only screen and (min-width : 1000px) {
+    .tagline { 
+        font-size : 8em;
+    }
+
+    .explore-our-products-button {
+        top : 36em;
+    }
+
+    .about-us-container {
+        padding-top : 6em;
+        padding-bottom : 6em;
+    }
+
+    .about-us-container p {
+        font-size : 1.4em;
+    }
+
+    .quick-stats-container {
+        gap : 10%;
+        text-align : left;
+        flex-direction : row;
+        font-size : 2.5rem;
+        padding-left : 0;
+        padding-right : 0;
+    }
+    
+    .capacity {
+        border-left : 3px solid white;
+        border-right : 3px solid white;
+        border-top : none;
+        border-bottom : none;
+        padding-left : 96px;
+        padding-right : 96px;
+        padding-top : 32px;
+        padding-bottom : 32px;
+    }
+}
+
+@media only screen and (min-width : 1500px) {
+    .quick-stats-container {
+        font-size : 4rem;
+    }
+
+    .capacity {
+        padding-left : 128px;
+        padding-right : 128px;
+    }
+}
