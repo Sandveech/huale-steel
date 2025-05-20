@@ -164,7 +164,7 @@ const translations = {
         cambodia_tel : "<i class='fa-solid fa-phone'></i> (+855) 60 801 999 (កម្ពុជា)",
         australia_tel : "<i class='fa-solid fa-phone'></i> (+61) 432 168 168 (អូស្រ្តាលី)",
         email_us : "អ៊ីមែលមកយើងខ្ញុំ",
-        full_name : "ឈ្មោះពេញ",
+        full_name : "នាមខ្លួន",
         email_address : "អាសយដ្ឋានអ៊ីមែល",
         subject : "ប្រធានបទ",
         message : "សារ",
