@@ -1,0 +1,331 @@
+*   {
+    margin: 0;
+}
+
+body {
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 400;
+    font-size : 1em;
+    color: #333;
+}
+
+p, li, a, span {
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 600;
+}
+
+#transition-overlay {
+    position : fixed;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background : white;
+    z-index : 9999;
+    pointer-events : none;
+    opacity : 0;
+    transition : opacity 0.5s ease;
+}
+
+#transition-overlay.show {
+    opacity : 1;
+    pointer-events : all;
+}
+
+/*===Header===*/
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index : 101;
+}
+
+.nav-container {
+    padding-top : 0.5rem;
+    padding-bottom : 0.5rem;
+    padding-left : 2rem;
+    padding-right : 2rem;
+}
+
+.nav-div {
+    display : flex;
+    align-items : center;
+    justify-content : space-between;
+}
+
+.logo img {
+    width: 48px;
+}
+
+.nav-menu {
+    display : none;
+}
+
+.nav-menu ul {
+    display : flex;
+    gap : 2rem;
+    list-style : none;
+    padding-left : 0;
+    font-weight : 600;
+}
+
+.language-dropdown {
+    display : inline-block;
+    padding-left : 4rem;
+}
+
+.language-dropdown-button {
+    background : none;
+}
+
+#burger-menu-button {
+    font-size: 24px;
+    border: none;
+    background: none;
+}
+
+.language-dropdown:hover .dropdown-btn {
+    color : #e00225;
+}
+
+.dropdown-btn {
+    padding : 0.5rem 1rem;
+    background : none; 
+    border : none;
+    cursor : pointer;
+    font-size : 1rem;
+    z-index : 10;
+    white-space : nowrap;
+    color : #333;
+    transition :
+        color 0.3s ease;
+}
+
+.dropdown-content {
+    position: absolute;
+    top : 100%;
+    background : none;
+    border : none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin : 0 2rem;
+    min-width : 84px;
+    max-height : 0;
+    overflow : hidden;
+    opacity : 0;
+    visibility : hidden;
+    transition : 
+        max-height 0.8s ease,
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+    z-index : 9;
+}
+
+.dropdown-content a {
+    display : block;
+    padding : 0.5rem 1rem;
+    color : #333;
+    background-color : white;
+    transition :
+        background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color : #f1f1f1;
+}
+
+.language-dropdown:hover .dropdown-content {
+    max-height : 200px;
+    opacity : 1;
+    visibility : visible;
+}
+
+/*===Main===*/
+
+.sidebar {
+    position : fixed;
+    top : 0;
+    right : -310px;
+    width : 280px;
+    height : 100%;
+    background-color : #fff;
+    box-shadow: -8px 0 20px rgba(0, 0, 0, 0.2);
+    transition : right 0.3s ease;
+    z-index : 1000;
+    padding : 2rem 1rem;
+    list-style : none;
+}
+
+.sidebar.active {
+    right : 0;
+}
+
+.sidebar.active .close-sidebar-btn {
+    right : -236px;
+}
+
+.sidebar li {
+    margin : 1rem 0;
+}
+
+.close-sidebar-btn {
+    position : relative;
+    border : none;
+    background : none;
+    cursor : pointer;
+    color : #333;
+    transition :
+        color 0.3s ease;
+    right : -236px;
+    font-size : 1.5rem;
+}
+
+.close-sidebar-btn:hover {
+    color : #e00225;
+}
+
+/*===Footer===*/
+
+footer {
+    width: 100%;
+    height: auto;
+    background-color: #021e87;
+    box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.footer-container {
+    display : flex;
+    justify-content : center;
+    flex-wrap : wrap;
+    color : white;
+    padding-top : 2em;
+    padding-bottom : 2em;
+
+    gap : 10vw;
+}
+
+.footer-container ul {
+    list-style : none;
+    padding : 0;
+    line-height : 2;
+}
+
+.footer-container h2 {
+    line-height: 3;
+}
+
+.footer-container ul li a {
+    color : white;
+}
+
+.quick-links {
+    display : none;
+}
+
+.copyright {
+    color : white;
+    font-size : 0.8em;
+    text-align : center;
+    padding-top : 2rem;
+    padding-bottom : 2rem;
+    border-top : 2px solid white;
+}
+
+/*===Links===*/
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-link {
+    position : relative;
+}
+
+.nav-link.active {
+    color : #e00225;
+    pointer-events : none;
+}
+
+.nav-link::after {
+    content : "";
+    position : absolute;
+    bottom : -4px;
+    left : 50%;
+    transform : translateX(-50%) scaleX(0);
+    transform-origin : center;
+    width : 100%;
+    height : 3px;
+    background-color : #e00225;
+    transition : transform 0.2s ease;
+}
+
+.nav-link:hover::after {
+    transform : translateX(-50%) scaleX(1);
+}
+
+.disabled {
+    pointer-events : none;
+}
+
+/*===Buttons===*/
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+/*===Media Queries===*/
+
+@media only screen and (max-width : 600px) {
+
+}
+
+@media only screen and (min-width : 600px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width : 992px) {
+    .logo img {
+        width: 64px;
+    }
+
+    .nav-container {
+        padding-left : 5rem;
+        padding-right : 5rem;
+    }
+
+    .nav-menu {
+        display : inline-block;
+    }
+
+    .language-dropdown {
+        display : inline-block;
+        padding-left : 4rem;
+        padding-right : 0;
+    }
+
+    #burger-menu-button {
+        display : none;
+    }
+
+    .footer-container {
+        padding : 5rem;
+        gap : 16rem;
+    }
+
+    .quick-links {
+        display : block;
+    }
+}
+
+@media only screen and (min-width : 1200px) {
+
+}

@@ -1,0 +1,238 @@
+.prod-serv-title-section {
+    position : relative;
+    width : 100%;
+    height : 320px;
+    overflow : hidden;
+}
+
+.prod-serv-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background : rgba(2, 30, 135, 0.4);
+}
+
+.prod-serv-title-section img {
+    width : 100%;
+    height : 100%;
+    object-fit : cover;
+    object-position : center;
+}
+
+.prod-serv-title-section h1 {
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    position : absolute;
+    color : white;
+    font-family : "Bebas Neue", sans-serif;
+    font-weight : 200;
+    letter-spacing : 0.125rem;
+    font-size : 3em;
+    width : max-content;
+    line-height : 1;
+}
+
+html[lang="zh"] .prod-serv-title-section h1 {
+    font-weight : 600;
+}
+
+html[lang="kh"] .prod-serv-title-section h1 {
+    font-weight : 600;
+    font-size : 2em;
+}
+
+.products-section {
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    gap : 3em;
+    padding-top : 5em;
+    padding-bottom : 5em;
+    padding-left : 5em;
+    padding-right : 5em;
+    text-align: center;
+}
+
+.products-section p, ul {
+    margin-top : 1em;
+}
+
+.products-section ul {
+    color : #021e87;
+    margin-bottom : 2em;
+}
+
+.products-section ul li {
+    font-family : "Bebas Neue", sans-serif;
+    font-size : 1.4em;
+}
+
+.product-thumbnail {
+    border-radius: 24px;
+    width : 100%;
+    height : 400px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin-right : 4em;
+}
+
+#sheet-thumbnail {
+    background-image : url("../images/huale-steel-slitting-hot-rolled-sheet.webp");
+    background-position : center;
+    background-size : cover;
+}
+
+#coil-thumbnail {
+    background-color : #021e87;
+}
+
+#coil-thumbnail h1 {
+    color : white;
+    text-align : center;
+    margin-top : 2em;
+}
+
+.products-section h1 {
+    font-family : "Bebas Neue", sans-serif;
+    color : #021e87;
+    font-size : 3em;
+    line-height : 1;
+}
+
+.products-section ul {
+    list-style : none;
+    padding : 0;
+}
+
+.product {
+    display : flex;
+    flex-direction : column;
+}
+
+.ind-app-section { 
+    color : #021e87;
+    text-align : center;
+    font-family : "Bebas Neue", sans-serif;
+    font-size : 1.4em;
+    margin-top : 2em;
+    margin-bottom : 2em;
+}
+
+.ind-app-section h1 {
+    margin-bottom : 1em;
+}
+
+.applications-section {
+    display : flex;
+    align-items : center;
+    flex-direction : column;
+    gap : 2em;
+    padding-left : 2em;
+    padding-right : 2em;
+}
+
+.application {
+    width : 400px;
+    height : 400px;
+    background-color : #e00225;
+    border-radius : 24px;
+    color : white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.application h1, .application .fa-solid {
+    margin-top : 0.5em;
+    font-size : 4rem;
+}
+
+.application .fa-solid {
+    margin-top : -1.25em;
+    border-bottom : 3px solid white;
+    width : 50%;
+    padding-bottom : 32px;
+}
+
+.application p {
+    margin-top : 32px;
+    font-weight : 400;
+    font-size : 1rem;
+}
+
+/*===Media Queries===*/
+
+@media only screen and (max-width : 600px) {
+
+}
+
+@media only screen and (min-width : 600px) {
+    .prod-serv-title-section h1 {
+        font-size : 4em;
+    }
+
+    html[lang="kh"] .prod-serv-title-section h1 {
+        font-size : 3em;
+    }
+
+    .ind-app-section { 
+        font-size : 2em;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .prod-serv-title-section h1 {
+        font-size : 6em;
+    }
+
+    html[lang="kh"] .prod-serv-title-section h1 {
+        font-size : 4em;
+    }
+
+    .products-section {
+        align-items : flex-start;
+        text-align: left;
+    }
+
+    .products-section h1 {
+        font-size : 4em;
+    }
+
+    .product-thumbnail {
+        width : clamp(400px, 40vw, 800px);
+    }
+
+    .product {
+        display : flex;
+        flex-direction : row-reverse;
+    }
+
+    .product p, .product ul {
+        font-size : 1.4em;
+    }
+
+    .applications-section {
+        flex-direction : row;
+        justify-content : space-evenly;
+        flex-wrap : wrap;
+    }
+
+    .application p {
+        font-size : 1.4rem;
+    }
+}
+
+@media only screen and (min-width : 1000px) {
+    .prod-serv-title-section h1 {
+        font-size : 8em;
+    }
+
+    html[lang="kh"] .prod-serv-title-section h1 {
+        font-weight : 600;
+        font-size : 6em;
+    }
+}
+
+@media only screen and (min-width : 1500px) {
+
+}

@@ -1,129 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--css-->
-    <link rel="stylesheet" href="css/styles.css">
-    <!--Fonts-->
+    <title>Huale Steel - Homepage</title>
+    <!--fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <!--Images & Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" type="image/png" href="images/huale-steel-logo.png">
-    <!--Title-->
-    <title>Huale Steel - Homepage</title>
+    <link rel="icon" type="image/png" href="images/huale-steel-logo.webp">
+    <!--css-->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
-
 <body>
-    <!--Transition-->
     <div id="transition-overlay"></div>
 
-    <!--Header-->
     <header>
-        <div class="header container">
-            <!--Logo-->
-            <div class="logo icon-normal">
-                <a href="index.html">
-                    <img src="images/huale-steel-small-logo.png" alt="Huale Steel Logo">
-                </a>
-            </div>
-
-            <!--Language Dropdown-->
-            <div class="language-dropdown">
-                <button class="dropdown-btn button" id="lang-label">
-                    <i class="fa-solid fa-globe icon-normal"></i> &nbsp; <span>English</span> &nbsp; <i class="fa-solid fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content" id="lang-options">
-                    <a href="#">ខ្មែរ</a>
-                    <a href="#">中文</a>
+        <div class="nav-container">
+            <div class="nav-div">
+                <div class="header-left">
+                    <div class="logo"><a href="index.html"><img src="images/huale-steel-small-logo.webp" alt="Huale Steel Logo"></a></div>
+                </div>
+                <div class="header-right">
+                    <div class="nav-menu">
+                        <ul>
+                            <li><a href="index.html" class="nav-link" data-i18n="home">Home</a></li>
+                            <li><a href="about_us.html" class="nav-link" data-i18n="about_us">About Us</a></li>
+                            <li><a href="products_and_services.html" class="nav-link" data-i18n="products_and_services">Products & Services</a></li>
+                            <li><a href="contact_us.html" class="nav-link" data-i18n="contact_us">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="language-dropdown">
+                        <button class="dropdown-btn button" id="lang-label">
+                            <i class="fa-solid fa-globe icon-normal"></i> &nbsp; <span>EN</span> &nbsp; <i class="fa-solid fa-caret-down icon-normal"></i>
+                        </button>
+                        <div class="dropdown-content" id="lang-options">
+                            <a href="#">ខ្មែរ</a>
+                            <a href="#">中文</a>
+                        </div>
+                    </div>
+                    <button id="burger-menu-button"><i class="fa-solid fa-bars"></i></button>
                 </div>
             </div>
-
-            <!--Hamburger Button-->
-            <div id="hamburger">
-                <button class="hamburger-btn icon-mid button">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-
-            <!--Navigation Links-->
-            <nav class="navbar">
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link" data-i18n="home">HOME</a></li>
-                    <li><a href="about_us.html" class="nav-link" data-i18n="about_us">ABOUT US</a></li>
-                    <li><a href="subsidiaries_and_partners.html" class="nav-link" data-i18n="subsidiaries_n_partners">SUBSIDIARIES & PARTNERS</a></li>
-                    <li><a href="products_and_services.html" class="nav-link" data-i18n="products_n_services">PRODUCTS & SERVICES</a></li>
-                    <li><a href="contact_us.html" class="nav-link" data-i18n="contact_us">CONTACT US</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
-    <!--Sidebar-->
-    <nav id="sidebar" class="sidebar">
+    <div id="sidebar" class="sidebar">
         <button id="close-sidebar" class="close-sidebar-btn button">
             <i class="fa-solid fa-xmark icon-mid"></i>
         </button>
-        <li><a href="index.html" class="nav-link" data-i18n="home_alt">Home</a></li>
-        <li><a href="about_us.html" class="nav-link" data-i18n="about_us_alt">About Us</a></li>
-        <li><a href="subsidiaries_and_partners.html" class="nav-link" data-i18n="subsidiaries_n_partners_alt">Subsidiaries & Partners</a></li>
-        <li><a href="products_and_services.html" class="nav-link" data-i18n="products_n_services_alt">Products & Services</a></li>
-        <li><a href="contact_us.html" class="nav-link" data-i18n="contact_us_alt">Contact Us</a></li>
-    </nav>
+        <li><a href="index.html" class="nav-link" data-i18n="home">Home</a></li>
+        <li><a href="about_us.html" class="nav-link" data-i18n="about_us">About Us</a></li>
+        <li><a href="products_and_services.html" class="nav-link" data-i18n="products_and_services">Products & Services</a></li>
+        <li><a href="contact_us.html" class="nav-link" data-i18n="contact_us">Contact Us</a></li>
+    </div>
 
-    <!--Main-->
     <main>
         <div class="hero-container">
-            <img src="../images/steel-background-placeholder.jpg" alt="Hero Section Background">
+            <img src="../images/huale-steel-hero-background-homepage.webp" alt="Homepage Header Background">
             <div class="hero-overlay"></div>
-            <h1 data-i18n="tagline">Together We Develop,<br>Together We Prosper</h1>
-            <div class="explore-our-products">
-                <button class="explore-button" data-i18n="explore_our_products">Explore Our Products</button>
-                <i class="fa-solid fa-arrow-right explore-arrow"></i>
-            </div>  
+            <h1 class="tagline" data-i18n="tagline">Together We Develop,<br>Together We Prosper</h1>
+            <a href="products_and_services.html"><button class="explore-our-products-button" data-i18n="explore_our_products">Explore Our Products</button></a>
         </div>
-        <div class="quick-stats-container">
 
+        <div class="about-us-container">
+            <p data-i18n="short_summary">"From a foundation of international steel trade by strong Cambodia-China relations, Huale Steel was established to harness Cambodia's strategic position."</p>
+            <a href="about_us.html"><button class="read-more-button" data-i18n="read_more">Read More &nbsp;<i class="fa-solid fa-angle-right"></i></button></a>
+        </div>
+
+        <div class="location-background">
+            <img src="images/huale-steel-background-lower-homepage.webp" alt="Homepage Lower Background">
+        </div>
+
+        <div class="quick-stats-container">
+            <div class="established" data-i18n="established">
+                <i class="fa-solid fa-calendar"></i><br>
+                ESTABLISHED:<br>
+                2024
+            </div>
+
+            <div class="capacity" data-i18n="capacity">
+                <i class="fa-solid fa-weight-hanging"></i><br>
+                CAPACITY:<br>
+                600 TONS/DAY
+            </div>
+
+            <div class="locations" data-i18n="locations">
+                <i class="fa-solid fa-location-dot"></i><br>
+                LOCATIONS:<br>
+                CAMBODIA & CHINA
+            </div>
         </div>
     </main>
 
-    <!--Footer-->
     <footer>
         <div class="footer-container">
-            <!--Navigation Links-->
-            <div class="footer-section">
-                <h4 data-i18n="quick_links">QUICK LINKS</h4>
+            <div class="quick-links">
+                <h2 data-i18n="quick_links">Quick Links</h2>
                 <ul>
-                    <li><a href="index.html" class="nav-link" data-i18n="home_alt">Home</a></li>
-                    <li><a href="about_us.html" class="nav-link" data-i18n="about_us_alt">About Us</a></li>
-                    <li><a href="subsidiaries_and_partners.html" class="nav-link" data-i18n="subsidiaries_n_partners_alt">Subsidiaries & Partners</a></li>
-                    <li><a href="products_and_services.html" class="nav-link" data-i18n="products_n_services_alt">Products & Services</a></li>
-                    <li><a href="contact_us.html" class="nav-link" data-i18n="contact_us_alt">Contact Us</a></li>
+                    <li><a href="index.html" class="nav-link" data-i18n="home">Home</a></li>
+                    <li><a href="about_us.html" class="nav-link" data-i18n="about_us">About Us</a></li>
+                    <li><a href="products_and_services.html" class="nav-link" data-i18n="products_and_services">Products & Services</a></li>
+                    <li><a href="contact_us.html" class="nav-link" data-i18n="contact_us">Contact Us</a></li>
                 </ul>
             </div>
 
-            <!--Social Media Links-->
-            <div class="footer-section">
-                <h4 data-i18n="social_media">SOCIAL MEDIA</h4>
+            <div class="social-media">
+                <h2 data-i18n="social_media">Social Media</h2>
                 <ul>
-                    <li><a href="https://web.facebook.com/profile.php?id=61568759048866" class="nav-link" data-i18n="facebook"><i class="fa-brands fa-facebook">&nbsp;</i> Facebook</a></li>
-                    <li><a href="https://t.me/hualesteel" class="nav-link" data-i18n="telegram"><i class="fa-brands fa-telegram">&nbsp;</i> Telegram</a></li>
+                    <li><a href="#" class="nav-link" data-i18n="facebook">
+                        <i class="fa-brands fa-facebook"></i>&nbsp;
+                        Facebook
+                    </a></li>
+                    <li><a href="#" class="nav-link" data-i18n="telegram">
+                        <i class="fa-brands fa-telegram"></i>&nbsp;
+                        Telegram
+                    </a></li>
                 </ul>
             </div>
         </div>
-
-        <!--Footer Bottom-->
-        <div class="footer-bottom">
-            &copy; 2025 Huale Steel. All Rights Reserved.
-        </div>
+        <p class="copyright">Copyright &copy; 2025 Huale Steel. All Rights Reserved.</p>
     </footer>
 
-    <!--Scripts-->
     <script src="js/script.js"></script>
 </body>
-
 </html>

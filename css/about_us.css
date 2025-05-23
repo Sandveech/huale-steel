@@ -1,0 +1,176 @@
+.about-us-title-section {
+    position : relative;
+    width : 100%;
+    height : 320px;
+    overflow : hidden;
+}
+
+.about-us-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background : rgba(2, 30, 135, 0.4);
+}
+
+.about-us-title-section img {
+    width : 100%;
+    height : 100%;
+    object-fit : cover;
+    object-position : center;
+}
+
+.about-us-title-section h1 {
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    position : absolute;
+    color : white;
+    font-family : "Bebas Neue";
+    font-weight : 200;
+    letter-spacing : 0.125rem;
+    font-size : 6em;
+    width : max-content;
+    line-height : 1;
+}
+
+html[lang="zh"] .about-us-title-section h1 {
+    font-weight : 600;
+}
+
+html[lang="kh"] .about-us-title-section h1 {
+    font-weight : 600;
+    font-size : 4.5em;
+}
+
+.story-container {
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+    gap : 5em;
+    padding-top : 5em;
+    padding-bottom : 5em;
+    padding-left : 2em;
+    padding-right : 2em;
+}
+
+.story-container img {
+    width : 100%;
+    height : 8em;
+    object-fit : cover;
+    object-position : center;
+}
+
+.story-container p {
+    margin-left : 4em;
+    margin-right : 4em;
+    margin-bottom : 4em;
+}
+
+.story {
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+}
+
+.mission-vision-container {
+    display : flex;
+    flex-direction : column;
+    color : white;
+    font-family: "Bebas Neue", sans-serif;
+    font-size : 2em;
+    margin-bottom : 2em;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.mission-vision-container p {
+    font-size : 1.4rem;
+    margin-right : 8em;
+}
+
+.mission-vision-block {
+    padding-left : 1.5em;
+    padding-top : 1.5em;
+    padding-bottom : 6em;
+}
+
+.mission-vision-block h1 {
+    padding-bottom : 0.2em;
+    margin-right : 2.5em;
+}
+
+.mission-vision-block p {
+    border-top : 2px solid white;
+    padding-top : 1.5em;
+    font-size : 1rem;
+    font-family : "Roboto Flex";
+    font-weight : 200;
+}
+
+#mission {
+    background-color : #021e87;
+}
+
+#vision {
+    background-color : #e00225;
+}
+
+/*===Media Queries===*/
+
+@media only screen and (max-width : 600px) {
+
+}
+
+@media only screen and (min-width : 600px) {
+    .about-us-title-section h1 {
+        font-size : 8em;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    html[lang="kh"] .about-us-title-section h1 {
+        font-weight : 600;
+        font-size : 6em;
+    }
+}
+
+@media only screen and (min-width : 1000px) {
+    .story {
+        flex-direction : row;
+    }
+
+    #story-mid {
+        flex-direction : row-reverse
+    }
+    
+    .story-container p {
+        margin-bottom : 0;
+        font-size : 1.4em;  
+    }
+
+    .story-container img {
+        width : 50%;
+        height : 16em;
+    }
+
+    .mission-vision-container {
+        flex-direction : row;
+    }
+
+    .mission-vision-container p {
+        font-size : 1.4rem;
+        width : 50vh;
+        margin-right : 0;
+    }
+
+    .mission-vision-block {
+        width : 50%;
+    }
+}
+
+@media only screen and (min-width : 1500px) {
+
+}
